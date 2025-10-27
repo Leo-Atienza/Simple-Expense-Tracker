@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { format, parseISO } from 'date-fns';
 import type { Expense } from '../types';
@@ -17,11 +16,15 @@ const ExpenseItem: React.FC<ExpenseItemProps> = ({ expense, onDelete }) => {
   return (
     <li className="flex items-center justify-between py-4 group">
       <div className="flex items-center space-x-4">
+        {/* Fix: The 'style' prop is not accepted by the Icon component. Moved the color style to the parent div, which the SVG icon will inherit. */}
         <div 
             className="w-12 h-12 rounded-full flex items-center justify-center"
-            style={{ backgroundColor: categoryInfo?.color ? `${categoryInfo.color}20` : '#e5e7eb' }}
+            style={{ 
+              backgroundColor: categoryInfo?.color ? `${categoryInfo.color}20` : '#e5e7eb',
+              color: categoryInfo?.color 
+            }}
         >
-          <Icon className="w-6 h-6" style={{ color: categoryInfo?.color }}/>
+          <Icon className="w-6 h-6" />
         </div>
         <div>
           <p className="text-md font-medium text-text-primary">{expense.description}</p>
