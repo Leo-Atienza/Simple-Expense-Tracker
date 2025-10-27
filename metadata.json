@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Expense Tracker",
+  "description": "A simple and beautiful expense tracker that provides daily, weekly, monthly, and yearly spending summaries, along with AI-powered insights to help you manage your finances better.",
+  "requestFramePermissions": []
+}
